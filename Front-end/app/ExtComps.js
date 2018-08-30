@@ -3,11 +3,11 @@
 
             //////----------------------------FORM COMPONENT TO SUBMIT DATA---------------------------///////
             Ext.QuickTips.init();
-
+            var API2='http://8131efe5.ngrok.io/';
             var form = Ext.create('Ext.form.Panel', {
                 id: 'newForm',
                 renderTo: 'divForForm',
-                url: 'http://localhost:8080/api',
+                url: API2+'api',
                 jsonSubmit: true,
                 border: true,
                 width: 300,
@@ -105,7 +105,7 @@
                 autoLoad: 'true',
                 proxy: {
                     type: 'ajax',
-                    url: 'http://localhost:8080/api/all',
+                    url: API2+'api/all',
                     reader: {
                         type: 'json',
                         root: 'users'
@@ -156,7 +156,7 @@
 
                                     Ext.Ajax.request({
 
-                                        url: 'http://localhost:8080/api/delete?Id=' + record.getId(),
+                                        url: API2+'api/delete?Id=' + record.getId(),
 
                                         success: function (response) {
                                             var text = response.responseText;
